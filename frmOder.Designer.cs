@@ -41,6 +41,7 @@
             this.ckbMushrooms = new System.Windows.Forms.CheckBox();
             this.ckbExtraCheese = new System.Windows.Forms.CheckBox();
             this.gbOrderSummary = new System.Windows.Forms.GroupBox();
+            this.lblWhereToEat = new System.Windows.Forms.Label();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,12 +59,13 @@
             this.rbEatIn = new System.Windows.Forms.RadioButton();
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
-            this.lblWhereToEat = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.gbSize.SuspendLayout();
             this.gbToppings.SuspendLayout();
             this.gbOrderSummary.SuspendLayout();
             this.gbCrustType.SuspendLayout();
             this.gbWhereToEat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbSize
@@ -237,11 +239,18 @@
             this.gbOrderSummary.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbOrderSummary.Location = new System.Drawing.Point(1452, 370);
             this.gbOrderSummary.Name = "gbOrderSummary";
-            this.gbOrderSummary.Size = new System.Drawing.Size(739, 587);
+            this.gbOrderSummary.Size = new System.Drawing.Size(429, 587);
             this.gbOrderSummary.TabIndex = 8;
             this.gbOrderSummary.TabStop = false;
             this.gbOrderSummary.Text = "Order Summary";
-            this.gbOrderSummary.Enter += new System.EventHandler(this.gbOrderSummary_Enter);
+            // 
+            // lblWhereToEat
+            // 
+            this.lblWhereToEat.AutoSize = true;
+            this.lblWhereToEat.Location = new System.Drawing.Point(266, 327);
+            this.lblWhereToEat.Name = "lblWhereToEat";
+            this.lblWhereToEat.Size = new System.Drawing.Size(0, 25);
+            this.lblWhereToEat.TabIndex = 22;
             // 
             // lblTotalPrice
             // 
@@ -435,19 +444,21 @@
             this.btnReset.UseVisualStyleBackColor = false;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // lblWhereToEat
+            // numericUpDown1
             // 
-            this.lblWhereToEat.AutoSize = true;
-            this.lblWhereToEat.Location = new System.Drawing.Point(266, 327);
-            this.lblWhereToEat.Name = "lblWhereToEat";
-            this.lblWhereToEat.Size = new System.Drawing.Size(0, 38);
-            this.lblWhereToEat.TabIndex = 22;
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(150, 572);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(309, 57);
+            this.numericUpDown1.TabIndex = 13;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // frmOder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2222, 1052);
+            this.ClientSize = new System.Drawing.Size(1924, 1050);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnOrder);
             this.Controls.Add(this.gbWhereToEat);
@@ -458,6 +469,7 @@
             this.Controls.Add(this.gbSize);
             this.Name = "frmOder";
             this.Text = "frmOrder";
+            this.Load += new System.EventHandler(this.frmOder_Load);
             this.gbSize.ResumeLayout(false);
             this.gbSize.PerformLayout();
             this.gbToppings.ResumeLayout(false);
@@ -468,6 +480,7 @@
             this.gbCrustType.PerformLayout();
             this.gbWhereToEat.ResumeLayout(false);
             this.gbWhereToEat.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -506,5 +519,6 @@
         private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Label lblWhereToEat;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

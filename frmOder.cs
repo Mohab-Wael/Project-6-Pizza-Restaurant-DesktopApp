@@ -192,9 +192,16 @@ namespace Pizza
             }
         }
  
+        float GetPizzaQuantity()
+        {
+            return Convert.ToSingle(numericUpDown1.Value);
+        }
+
+
+
         float CalculateTotalPrice()
         {
-            return GetSelectedSizePrice() + GetSelectedCrustPrice() + CalculateToppingsPrice(); 
+            return (GetSelectedSizePrice() + GetSelectedCrustPrice() + CalculateToppingsPrice()) * GetPizzaQuantity(); 
         }
 
 
@@ -335,9 +342,14 @@ namespace Pizza
             ResetForm();
         }
 
-        private void gbOrderSummary_Enter(object sender, EventArgs e)
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
+            UpdateTotalPrice();
+        }
 
+        private void frmOder_Load(object sender, EventArgs e)
+        {
+            numericUpDown1.Value = 1;
         }
     }
 }
